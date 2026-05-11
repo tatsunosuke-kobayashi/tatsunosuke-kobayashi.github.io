@@ -21,27 +21,23 @@ CO₂–water slab simulation
   <a href="{{ base_path }}/files/co2_slab_last100.xyz.gz" download style="color: #0066cc;">download full trajectory</a>
 </p>
 
-<script src="https://unpkg.com/ngl@2.0.0-dev.39/dist/ngl.js"></script>
+<script src="https://unpkg.com/ngl@2.4.0/dist/ngl.js"></script>
 <script>
 document.addEventListener('DOMContentLoaded', function () {
   var stage = new NGL.Stage("ngl-slab-viewer", {
-    backgroundColor: "#0e1422",
-    quality: "medium",
-    sampleLevel: 1
+    backgroundColor: "#0e1422"
   });
 
-  stage.loadFile("{{ base_path }}/files/co2_slab_last25.xyz.gz", {
+  stage.loadFile("{{ base_path }}/files/co2_slab_last25.xyz", {
     asTrajectory: true,
-    defaultRepresentation: false,
-    ext: "xyz"
+    defaultRepresentation: false
   }).then(function (comp) {
     var loading = document.getElementById("ngl-slab-loading");
     if (loading) loading.style.display = "none";
 
-    console.log("[NGL] loaded structure with", comp.structure.atomCount, "atoms,",
-                comp.trajList ? comp.trajList.length : 0, "trajectory components");
+    console.log("[NGL] loaded", comp.structure.atomCount, "atoms,",
+                "frames:", comp.trajList ? comp.trajList.length : 0);
 
-    // Spacefill at ~vdW radius — most reliably visible for many atoms
     comp.addRepresentation("spacefill", {
       radiusScale: 0.6
     });
