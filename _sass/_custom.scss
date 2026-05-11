@@ -114,10 +114,35 @@ body,
   line-height: 1.55;
 }
 
+/* Force the author URL wrapper to be a normal block on every viewport.
+   The default display:table-cell on narrow viewports causes the URL
+   list to detach from the sidebar and render after the footer. */
+.author__urls-wrapper {
+  display: block !important;
+  width: 100% !important;
+}
+
 .author__urls {
+  display: block !important;
+  position: relative !important;
   font-size: 0.92em;
   border-top: 1px solid #d6dae0;
   padding-top: 0.8em;
+  background: transparent !important;
+  border-left: 0 !important;
+  border-right: 0 !important;
+  border-bottom: 0 !important;
+  box-shadow: none !important;
+  margin: 0 !important;
+}
+
+.author__urls::before,
+.author__urls::after {
+  display: none !important;
+}
+
+.sidebar .btn.btn--inverse {
+  display: none !important;
 }
 
 .author__urls li,
