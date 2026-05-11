@@ -24,19 +24,26 @@ CO₂–water slab simulation
 <script src="https://unpkg.com/ngl@2.0.0-dev.39/dist/ngl.js"></script>
 <script>
 document.addEventListener('DOMContentLoaded', function () {
-  var stage = new NGL.Stage("ngl-slab-viewer", { backgroundColor: "#0e1422" });
+  var stage = new NGL.Stage("ngl-slab-viewer", {
+    backgroundColor: "#0e1422",
+    quality: "medium",
+    sampleLevel: 1
+  });
 
   stage.loadFile("{{ base_path }}/files/co2_slab_last25.xyz.gz", {
     asTrajectory: true,
-    defaultRepresentation: false
+    defaultRepresentation: false,
+    ext: "xyz"
   }).then(function (comp) {
     var loading = document.getElementById("ngl-slab-loading");
     if (loading) loading.style.display = "none";
 
-    comp.addRepresentation("ball+stick", {
-      multipleBond: "symmetric",
-      radiusScale: 0.32,
-      aspectRatio: 1.5
+    console.log("[NGL] loaded structure with", comp.structure.atomCount, "atoms,",
+                comp.trajList ? comp.trajList.length : 0, "trajectory components");
+
+    // Spacefill at ~vdW radius — most reliably visible for many atoms
+    comp.addRepresentation("spacefill", {
+      radiusScale: 0.6
     });
 
     if (comp.trajList && comp.trajList.length > 0) {
@@ -51,6 +58,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     stage.autoView();
   }).catch(function (err) {
+    console.error("[NGL] load error", err);
     var loading = document.getElementById("ngl-slab-loading");
     if (loading) loading.textContent = "Failed to load trajectory: " + err.message;
   });
@@ -58,3 +66,11 @@ document.addEventListener('DOMContentLoaded', function () {
   window.addEventListener('resize', function () { stage.handleResize(); });
 });
 </script>
+
+
+Fisher information geometry
+======
+
+
+Machine learning interatomic potentials
+======
