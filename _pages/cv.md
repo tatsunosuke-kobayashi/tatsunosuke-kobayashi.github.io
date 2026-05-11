@@ -33,12 +33,6 @@ Publications
     {% include archive-single-cv.html %}
   {% endfor %}</ul>
 
-Talks
-======
-  <ul>{% for post in site.talks reversed %}
-    {% include archive-single-talk-cv.html  %}
-  {% endfor %}</ul>
-
 Activities
 ======
 * Co-founder and co-representative of a student club at Keio University (2025–)
