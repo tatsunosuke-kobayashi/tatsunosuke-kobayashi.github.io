@@ -224,25 +224,25 @@ body,
 
 /* No body-level padding — masthead nav needs full width to avoid wrapping. */
 
-/* Widen the gap between sidebar and main content on desktop layouts. */
-@media (min-width: 800px) {
-  .page,
-  .archive {
-    padding-left: 4em !important;
+/* Widen the gap between sidebar and main content on desktop layouts.
+   Apply only to .page (single layout). .archive uses Susy's existing
+   gap which is already correct; adding padding there causes the
+   sidebar URLs to get pushed to the bottom of the page. */
+@media (min-width: 925px) {
+  .page {
+    padding-left: 3em !important;
   }
 }
 
-@media (min-width: 1100px) {
-  .page,
-  .archive {
-    padding-left: 6em !important;
+@media (min-width: 1280px) {
+  .page {
+    padding-left: 5em !important;
   }
 }
 
-@media (min-width: 1400px) {
-  .page,
-  .archive {
-    padding-left: 8em !important;
+@media (min-width: 1600px) {
+  .page {
+    padding-left: 7em !important;
   }
 }
 

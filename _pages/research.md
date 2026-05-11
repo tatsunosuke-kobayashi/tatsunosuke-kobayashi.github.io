@@ -28,7 +28,7 @@ document.addEventListener('DOMContentLoaded', function () {
     backgroundColor: 0x0e1422
   });
 
-  fetch("{{ base_path }}/files/co2_slab_last25.xyz")
+  fetch("{{ base_path }}/files/co2_slab_light.xyz")
     .then(function (r) {
       if (!r.ok) throw new Error("HTTP " + r.status);
       return r.text();
@@ -37,14 +37,13 @@ document.addEventListener('DOMContentLoaded', function () {
       var loading = document.getElementById("slab-loading");
       if (loading) loading.style.display = "none";
 
-      viewer.addModelsAsFrames(data, "xyz", { keepH: true, noComputeSecondaryStructure: true });
-      // Spheres only — sticks (bond detection) hangs for ~10k atoms
-      viewer.setStyle({}, { sphere: { scale: 0.45 } });
+      viewer.addModelsAsFrames(data, "xyz", { noComputeSecondaryStructure: true });
+      viewer.setStyle({}, { sphere: { scale: 0.55 } });
       viewer.zoomTo();
-      // Lay the slab on its side: rotate so the long z-axis becomes horizontal
+      // Lay the slab on its side: long z-axis horizontal
       viewer.rotate(90, "y");
       viewer.render();
-      viewer.animate({ loop: "forward", reps: 0, interval: 220 });
+      viewer.animate({ loop: "forward", reps: 0, interval: 300 });
     })
     .catch(function (err) {
       console.error("[3Dmol] load error", err);
