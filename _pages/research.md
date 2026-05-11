@@ -37,12 +37,9 @@ document.addEventListener('DOMContentLoaded', function () {
       var loading = document.getElementById("slab-loading");
       if (loading) loading.style.display = "none";
 
-      viewer.addModelsAsFrames(data, "xyz");
-      // Spheres + sticks: makes water visible as connected H–O–H molecules
-      viewer.setStyle({}, {
-        sphere: { scale: 0.30 },
-        stick: { radius: 0.10 }
-      });
+      viewer.addModelsAsFrames(data, "xyz", { keepH: true, noComputeSecondaryStructure: true });
+      // Spheres only — sticks (bond detection) hangs for ~10k atoms
+      viewer.setStyle({}, { sphere: { scale: 0.45 } });
       viewer.zoomTo();
       // Lay the slab on its side: rotate so the long z-axis becomes horizontal
       viewer.rotate(90, "y");
