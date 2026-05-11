@@ -217,9 +217,29 @@ body,
   color: #6b7383 !important;
 }
 
-/* --- Page width ---------------------------------------------------------- */
+/* --- Page width & breathing room ---------------------------------------- */
 .page__content {
   max-width: 760px;
+}
+
+/* Add comfortable side padding so content never hugs the viewport edges */
+#main {
+  padding-left: 1.6em !important;
+  padding-right: 1.6em !important;
+}
+
+@media (min-width: 640px) {
+  #main {
+    padding-left: 2.4em !important;
+    padding-right: 2.4em !important;
+  }
+}
+
+@media (min-width: 1024px) {
+  #main {
+    padding-left: 3em !important;
+    padding-right: 3em !important;
+  }
 }
 
 /* --- HR ------------------------------------------------------------------ */
