@@ -67,6 +67,12 @@ document.addEventListener('DOMContentLoaded', function () {
 Fisher information geometry
 ======
 
+<figure style="margin: 0 auto; text-align: center;">
+  <img src="{{ base_path }}/images/research/redacted_image.gif"
+       alt="Fisher information ellipsoid (rotating)"
+       style="max-width: 100%; height: auto; border-radius: 6px; box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);" />
+</figure>
+
 
 Machine learning interatomic potentials
 ======
