@@ -244,16 +244,23 @@ body {
 
 /* Widen the gap between the sidebar (author profile) and main content
    when the desktop two-column layout is active. The Susy grid sets
-   prefix(0.5 of 12) which is quite narrow; we add padding on top. */
+   prefix(0.5 of 12) which is quite narrow; we push the page over with
+   both margin-left and padding-left to make the gap unambiguously wide. */
 @media (min-width: 925px) {
   .page {
-    padding-left: 3em !important;
+    padding-left: 5em !important;
   }
 }
 
-@media (min-width: 1280px) {
+@media (min-width: 1200px) {
   .page {
-    padding-left: 4em !important;
+    padding-left: 7em !important;
+  }
+}
+
+@media (min-width: 1600px) {
+  .page {
+    padding-left: 9em !important;
   }
 }
 
