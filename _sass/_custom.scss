@@ -145,6 +145,23 @@ body,
   display: none !important;
 }
 
+/* Drop the position:fixed sticky behaviour. With short pages (e.g.
+   Publications with no entries) the fixed sidebar visually overlaps
+   the footer; keeping the sidebar in normal flow avoids this. */
+.sidebar.sticky {
+  position: static !important;
+  height: auto !important;
+  overflow-y: visible !important;
+  padding-top: 1em !important;
+}
+
+/* Ensure each page is tall enough so the footer never appears next
+   to the sidebar (visually penetrating it). */
+.archive,
+.page {
+  min-height: 60vh;
+}
+
 .author__urls li,
 .author__urls a {
   color: #2f3645 !important;
