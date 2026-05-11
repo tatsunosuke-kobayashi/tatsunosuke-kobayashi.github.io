@@ -1,13 +1,14 @@
 ---
 permalink: /
 title: "About"
+description: "Tatsunosuke Kobayashi (小林達之介) — Master's student at Keio University, Department of Mechanical Engineering."
 author_profile: true
 redirect_from:
   - /about/
   - /about.html
 ---
 
-Master's student at Keio University, Department of Mechanical Engineering (Prof. Kenji Yasuoka's lab).
+**Tatsunosuke Kobayashi** (小林達之介) — Master's student at Keio University, Department of Mechanical Engineering (Prof. Kenji Yasuoka's lab).
 
 I work on molecular simulation of CO₂–water systems, motivated by the reliability problem of CO₂ solubility predictions for carbon capture and storage (CCS).
 

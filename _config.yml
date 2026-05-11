@@ -12,7 +12,7 @@ site_theme               : "air" # The available themes options are "default", "
 title                    : "Tatsunosuke Kobayashi"
 title_separator          : "-"
 name                     : &name "Tatsunosuke Kobayashi"
-description              : &description "Personal academic website of Tatsunosuke Kobayashi — molecular simulation, machine learning interatomic potentials, and Fisher information geometry."
+description              : &description "Tatsunosuke Kobayashi (小林達之介) — Master's student at Keio University. Molecular simulation, machine learning interatomic potentials, and Fisher information geometry for CO₂ solubility prediction."
 url                      : https://tatsunosuke-kobayashi.github.io # The base hostname & protocol for your site
 baseurl                  : "" # the subpath of your site, e.g. "/blog"
 repository               : "tatsunosuke-kobayashi/tatsunosuke-kobayashi.github.io"
@@ -24,7 +24,7 @@ author:
   # Biographic information
   avatar           : "profile.png"
   name             : "Tatsunosuke Kobayashi"
-  pronouns         : # example: "she/her"
+  pronouns         : "小林達之介"
   bio              : "M.Eng. student at Keio University. Molecular simulation × MLIP × Fisher information geometry for CO₂ solubility prediction."
   location         : "Yokohama, Japan"
   employer         : "Keio University"
@@ -147,9 +147,13 @@ og_description           :  # Social media default site image description
 # For specifying social profiles
 # - https://developers.google.com/structured-data/customize/social-profiles
 social:
-  type                   : # Person or Organization (defaults to Person)
-  name                   : # If the user or organization name differs from the site's name
+  type                   : Person
+  name                   : "Tatsunosuke Kobayashi"
+  alternate_names:
+    - "小林達之介"
+    - "Tatsu Kobayashi"
   links: # An array of links to social media profiles
+    - "https://github.com/tatsunosuke-kobayashi"
 
 
 # Analytics
