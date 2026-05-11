@@ -222,7 +222,7 @@ body,
   max-width: 760px;
 }
 
-/* Add comfortable outer breathing room around the whole layout */
+/* Outer breathing room around the whole layout */
 body {
   padding-left: 1em;
   padding-right: 1em;
@@ -239,6 +239,21 @@ body {
   body {
     padding-left: 2.5em;
     padding-right: 2.5em;
+  }
+}
+
+/* Widen the gap between the sidebar (author profile) and main content
+   when the desktop two-column layout is active. The Susy grid sets
+   prefix(0.5 of 12) which is quite narrow; we add padding on top. */
+@media (min-width: 925px) {
+  .page {
+    padding-left: 3em !important;
+  }
+}
+
+@media (min-width: 1280px) {
+  .page {
+    padding-left: 4em !important;
   }
 }
 
