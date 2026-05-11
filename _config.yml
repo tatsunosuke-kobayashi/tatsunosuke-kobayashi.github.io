@@ -8,7 +8,7 @@
 
 # Basic Site Settings
 locale                   : "en-US"
-site_theme               : "default" # The available themes options are "default", "air", "sunrise", "mint", "dirt" and "contrast"
+site_theme               : "air" # The available themes options are "default", "air", "sunrise", "mint", "dirt" and "contrast"
 title                    : "Tatsunosuke Kobayashi"
 title_separator          : "-"
 name                     : &name "Tatsunosuke Kobayashi"
@@ -25,7 +25,7 @@ author:
   avatar           : "profile.png"
   name             : "Tatsunosuke Kobayashi"
   pronouns         : # example: "she/her"
-  bio              : "Master's student at Keio University. Molecular simulation, MLIP, and Fisher information geometry for CO₂ solubility prediction."
+  bio              : "M.Eng. student at Keio University. Molecular simulation × MLIP × Fisher information geometry for CO₂ solubility prediction."
   location         : "Yokohama, Japan"
   employer         : "Keio University"
   uri              : # URL
