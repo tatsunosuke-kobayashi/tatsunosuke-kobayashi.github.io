@@ -13,7 +13,6 @@ Education
 ======
 * M.S., Mechanical Engineering, Keio University, 2027 (expected)
 * B.S., Mechanical Engineering, Keio University, 2024
-  * Cumulative GPA: 3.6 / 4.0
 
 Research interests
 ======
