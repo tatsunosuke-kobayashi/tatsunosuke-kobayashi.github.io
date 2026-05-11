@@ -27,9 +27,7 @@ Research interests
 Current research
 ======
 
-Classical force fields underestimate CO₂ solubility in water by up to roughly 50% in some pressure / force-field combinations. In my master's work I have shown that, REDACTED, the parameter direction dominating the solubility correction is shared across force fields (REDACTED).
-
-The doctoral plan is to (i) turn this into a universal REDACTED using Fisher information geometry and REDACTED; (ii) build a CO₂–water MLIP to evaluate the residual error that lies beyond the classical functional form; and (iii) use Fisher analysis to separate REDACTED error from REDACTED error.
+Working on classical molecular simulation and machine-learning interatomic potentials for CO₂–water systems, with the longer-term goal of more reliable property predictions for carbon capture and storage.
 
 
 Tools
