@@ -12,26 +12,21 @@ redirect_from:
 Education
 ======
 * M.S., Mechanical Engineering, Keio University, 2027 (expected)
-* B.S., Mechanical Engineering, Keio University, 2025
+* B.S., Mechanical Engineering, Keio University, 2024
   * Cumulative GPA: 3.6 / 4.0
 
 Research interests
 ======
-* Molecular simulation of CO₂–water systems (classical MD/MC, free energy perturbation)
-* Machine learning interatomic potentials (MLIP) for fluid-phase systems
-* Fisher information geometry for force field parameter identification
-* Carbon capture and storage (CCS) — molecular foundations of solubility prediction
+* Molecular simulation of CO₂–water systems
+* Machine learning interatomic potentials
+* Fisher information geometry for force-field calibration
+* Carbon capture and storage
 
 Technical skills
 ======
-* **Simulation**: LAMMPS, MCCCS Towhee, ASE, Quantum ESPRESSO, DeePMD-kit
-* **Programming**: Python (NumPy, PyTorch, automatic differentiation), Bash, custom Monte Carlo / FEP codes
-* **HPC**: GPU-based MLIP training, SLURM job management, conda environments
-* **Theory**: Statistical mechanics, free energy perturbation, Fisher information geometry, neural network potentials
-
-Honors and fellowships
-======
-*To be updated as available.*
+* **Simulation**: LAMMPS, MCCCS Towhee, Quantum ESPRESSO, DeePMD-kit, ASE
+* **Programming**: Python (PyTorch, NumPy), Bash
+* **HPC**: GPU-based MLIP training, SLURM, conda
 
 Publications
 ======
@@ -47,6 +42,4 @@ Talks
 
 Activities
 ======
-* Co-founder and co-representative of a student club at Keio University (since 2025)
-
-*Last updated: May 2026. Site under construction.*
+* Co-founder and co-representative of a student club at Keio University (2025–)
