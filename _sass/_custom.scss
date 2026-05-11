@@ -224,28 +224,25 @@ body,
 
 /* No body-level padding — masthead nav needs full width to avoid wrapping. */
 
-/* Widen the gap between sidebar and main content on desktop layouts.
-   Apply padding only to the outer content container (.page for single
-   layout, .archive for archive/list layouts). We DO NOT touch the
-   sidebar or .page__inner-wrap, which would distort the layout. */
-@media (min-width: 925px) {
+/* Widen the gap between sidebar and main content on desktop layouts. */
+@media (min-width: 800px) {
   .page,
   .archive {
-    padding-left: 3em !important;
+    padding-left: 4em !important;
   }
 }
 
-@media (min-width: 1280px) {
+@media (min-width: 1100px) {
   .page,
   .archive {
-    padding-left: 5em !important;
+    padding-left: 6em !important;
   }
 }
 
-@media (min-width: 1600px) {
+@media (min-width: 1400px) {
   .page,
   .archive {
-    padding-left: 7em !important;
+    padding-left: 8em !important;
   }
 }
 

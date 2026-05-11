@@ -38,8 +38,14 @@ document.addEventListener('DOMContentLoaded', function () {
       if (loading) loading.style.display = "none";
 
       viewer.addModelsAsFrames(data, "xyz");
-      viewer.setStyle({}, { sphere: { scale: 0.35 } });
+      // Spheres + sticks: makes water visible as connected H–O–H molecules
+      viewer.setStyle({}, {
+        sphere: { scale: 0.30 },
+        stick: { radius: 0.10 }
+      });
       viewer.zoomTo();
+      // Lay the slab on its side: rotate so the long z-axis becomes horizontal
+      viewer.rotate(90, "y");
       viewer.render();
       viewer.animate({ loop: "forward", reps: 0, interval: 220 });
     })
