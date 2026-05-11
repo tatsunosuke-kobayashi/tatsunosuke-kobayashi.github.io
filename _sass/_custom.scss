@@ -2,27 +2,74 @@
    CUSTOM OVERRIDES — Tatsunosuke Kobayashi
    ========================================================================== */
 
-/* --- Typography ----------------------------------------------------------- */
+/* --- Strong color contrast forcing --------------------------------------- */
+:root {
+  --global-text-color        : #1a1f2e;   /* body text: near-black navy */
+  --global-text-color-light  : #4a5160;   /* secondary text: dark gray */
+  --global-bg-color          : #ffffff;   /* page bg: clean white */
+  --global-link-color        : #0066cc;   /* links: clear blue */
+  --global-link-color-hover  : #003c80;
+  --global-link-color-visited: #5c33a8;
+  --global-border-color      : #d6dae0;
+  --global-base-color        : #0066cc;
+}
+
+/* Disable browser-level dark-mode override for our pages */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --global-text-color        : #1a1f2e;
+    --global-bg-color          : #ffffff;
+    --global-link-color        : #0066cc;
+    --global-link-color-hover  : #003c80;
+  }
+  html[data-theme="dark"] {
+    --global-text-color        : #1a1f2e !important;
+    --global-bg-color          : #ffffff !important;
+  }
+}
+
+/* --- Body / page text: enforce strong contrast --------------------------- */
 body,
+.page,
 .page__content,
-.page__content p {
+.page__content p,
+.page__content li,
+.page__content ul,
+.page__content ol,
+.page__content span,
+.page__content blockquote {
+  color: #1a1f2e !important;
+}
+
+body {
+  background-color: #ffffff !important;
+}
+
+/* --- Typography ---------------------------------------------------------- */
+body,
+.page__content {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Inter",
                "Helvetica Neue", "Hiragino Sans", "Hiragino Kaku Gothic ProN",
                "Yu Gothic UI", Meiryo, sans-serif;
   font-weight: 400;
   line-height: 1.75;
-  letter-spacing: 0.01em;
+  letter-spacing: 0.005em;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 .page__title,
-h1, h2, h3, h4, h5, h6 {
+.page__content h1,
+.page__content h2,
+.page__content h3,
+.page__content h4,
+.page__content h5,
+.page__content h6 {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Inter",
                "Helvetica Neue", "Hiragino Sans", "Yu Gothic UI", Meiryo, sans-serif;
   font-weight: 700;
   letter-spacing: -0.01em;
-  color: #1a1f2e;
+  color: #0a1124 !important;
 }
 
 .page__title {
@@ -31,39 +78,26 @@ h1, h2, h3, h4, h5, h6 {
   margin-bottom: 0.5em;
 }
 
-h1 { font-size: 2.0em; }
-h2 {
-  font-size: 1.55em;
-  margin-top: 1.8em;
+.page__content h1 { font-size: 2.0em; }
+.page__content h2 {
+  font-size: 1.5em;
+  margin-top: 2em;
   margin-bottom: 0.6em;
   padding-bottom: 0.3em;
-  border-bottom: 1px solid #e4e7eb;
+  border-bottom: 1px solid #d6dae0;
 }
-h3 {
-  font-size: 1.25em;
-  margin-top: 1.4em;
+.page__content h3 {
+  font-size: 1.2em;
+  margin-top: 1.6em;
   margin-bottom: 0.5em;
 }
 
-/* --- Page width & breathing room ----------------------------------------- */
-.page,
-.archive,
-#main {
-  font-size: 16px;
-}
-
-.page__content {
-  max-width: 760px;
-}
-
 /* --- Sidebar (author profile) -------------------------------------------- */
-.sidebar {
-  opacity: 1;
-}
+.sidebar { opacity: 1; }
 
 .author__avatar img {
   border-radius: 50%;
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.10);
   border: 3px solid #ffffff;
 }
 
@@ -71,35 +105,53 @@ h3 {
   font-weight: 700;
   font-size: 1.15em;
   letter-spacing: -0.01em;
+  color: #0a1124 !important;
 }
 
 .author__bio {
-  font-size: 0.95em;
-  color: #555c6b;
+  font-size: 0.92em;
+  color: #2f3645 !important;
   line-height: 1.55;
 }
 
 .author__urls {
-  font-size: 0.9em;
-  border-top: 1px solid #e4e7eb;
+  font-size: 0.92em;
+  border-top: 1px solid #d6dae0;
   padding-top: 0.8em;
 }
 
-.author__urls li {
-  margin-bottom: 0.4em;
+.author__urls li,
+.author__urls a {
+  color: #2f3645 !important;
+}
+
+.author__urls li:hover a,
+.author__urls a:hover {
+  color: #0066cc !important;
+}
+
+.author__urls .fa,
+.author__urls .fas,
+.author__urls .fab {
+  color: #0066cc;
 }
 
 /* --- Top navigation (masthead) ------------------------------------------- */
 .masthead {
-  border-bottom: 1px solid #e4e7eb;
-  background-color: rgba(255, 255, 255, 0.95);
-  backdrop-filter: saturate(180%) blur(8px);
-  -webkit-backdrop-filter: saturate(180%) blur(8px);
+  border-bottom: 1px solid #d6dae0;
+  background-color: #ffffff !important;
 }
 
 .site-title {
   font-weight: 700;
   letter-spacing: -0.01em;
+  color: #0a1124 !important;
+}
+
+.greedy-nav,
+.greedy-nav a {
+  color: #1a1f2e !important;
+  background: #ffffff !important;
 }
 
 .greedy-nav a {
@@ -109,73 +161,70 @@ h3 {
   transition: color 0.2s ease-in-out;
 }
 
+.greedy-nav a:hover {
+  color: #0066cc !important;
+}
+
 /* --- Links --------------------------------------------------------------- */
-a {
+.page__content a:not(.btn) {
+  color: #0066cc !important;
   text-decoration: none;
-  border-bottom: 1px solid transparent;
+  border-bottom: 1px solid rgba(0, 102, 204, 0.25);
   transition: color 0.2s ease, border-color 0.2s ease;
 }
 
-.page__content a:not(.btn) {
-  color: #0066b3;
-  border-bottom: 1px solid rgba(0, 102, 179, 0.25);
-}
-
 .page__content a:not(.btn):hover {
-  color: #003c6a;
-  border-bottom-color: #003c6a;
-}
-
-/* --- Page background ----------------------------------------------------- */
-body {
-  background-color: #fafbfc;
-}
-
-#main {
-  background-color: transparent;
+  color: #003c80 !important;
+  border-bottom-color: #003c80;
 }
 
 /* --- Lists in About ------------------------------------------------------ */
-.page__content ul {
-  padding-left: 1.4em;
-}
-
-.page__content ul li {
-  margin-bottom: 0.4em;
-  line-height: 1.7;
-}
-
-.page__content ul li::marker {
-  color: #0092ca;
-}
-
-/* --- Subtle "card" feel for the page body -------------------------------- */
-@media (min-width: 64em) {
-  .page__content {
-    padding: 1.5em 0;
-  }
-}
+.page__content ul { padding-left: 1.4em; }
+.page__content ul li { margin-bottom: 0.4em; line-height: 1.7; }
+.page__content ul li::marker { color: #0066cc; }
 
 /* --- Inline code & emphasis --------------------------------------------- */
 .page__content code {
   background: #eef2f6;
-  color: #1a1f2e;
+  color: #1a1f2e !important;
   padding: 0.1em 0.4em;
   border-radius: 4px;
   font-size: 0.92em;
 }
 
 .page__content em {
-  color: #555c6b;
+  color: #4a5160 !important;
+}
+
+.page__content strong {
+  color: #0a1124 !important;
+  font-weight: 700;
 }
 
 /* --- Footer -------------------------------------------------------------- */
 .page__footer {
   font-size: 0.9em;
-  background-color: transparent;
-  border-top: 1px solid #e4e7eb;
+  background-color: #f6f8fa !important;
+  border-top: 1px solid #d6dae0;
+  color: #4a5160;
+}
+
+.page__footer a {
+  color: #2f3645 !important;
 }
 
 .page__footer-copyright {
-  color: #888f9b;
+  color: #6b7383 !important;
+}
+
+/* --- Page width ---------------------------------------------------------- */
+.page__content {
+  max-width: 760px;
+}
+
+/* --- HR ------------------------------------------------------------------ */
+hr {
+  border: 0;
+  border-top: 1px solid #d6dae0;
+  margin: 2em 0;
 }
