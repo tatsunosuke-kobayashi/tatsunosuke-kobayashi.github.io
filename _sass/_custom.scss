@@ -222,25 +222,7 @@ body,
   max-width: 760px;
 }
 
-/* Outer breathing room around the whole layout */
-body {
-  padding-left: 1em;
-  padding-right: 1em;
-}
-
-@media (min-width: 768px) {
-  body {
-    padding-left: 1.5em;
-    padding-right: 1.5em;
-  }
-}
-
-@media (min-width: 1200px) {
-  body {
-    padding-left: 2.5em;
-    padding-right: 2.5em;
-  }
-}
+/* No body-level padding — masthead nav needs full width to avoid wrapping. */
 
 /* Widen the gap between sidebar and main content on desktop layouts.
    Apply padding only to the outer content container (.page for single

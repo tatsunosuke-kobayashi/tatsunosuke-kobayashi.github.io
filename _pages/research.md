@@ -10,8 +10,8 @@ author_profile: true
 CO₂–water slab simulation
 ======
 
-<div id="ngl-slab-viewer" style="width: 100%; height: 560px; background: #0e1422; border-radius: 8px; position: relative; box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12); overflow: hidden;">
-  <div id="ngl-slab-loading" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); color: #c8d1e0; font-family: -apple-system, sans-serif; font-size: 0.9em; letter-spacing: 0.04em;">
+<div id="slab-viewer" style="width: 100%; height: 560px; background: #0e1422; border-radius: 8px; position: relative; box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12); overflow: hidden;">
+  <div id="slab-loading" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); color: #c8d1e0; font-family: -apple-system, sans-serif; font-size: 0.9em; letter-spacing: 0.04em; z-index: 5;">
     Loading trajectory…
   </div>
 </div>
@@ -21,45 +21,33 @@ CO₂–water slab simulation
   <a href="{{ base_path }}/files/co2_slab_last100.xyz.gz" download style="color: #0066cc;">download full trajectory</a>
 </p>
 
-<script src="https://unpkg.com/ngl@2.4.0/dist/ngl.js"></script>
+<script src="https://3Dmol.csb.pitt.edu/build/3Dmol-min.js"></script>
 <script>
 document.addEventListener('DOMContentLoaded', function () {
-  var stage = new NGL.Stage("ngl-slab-viewer", {
-    backgroundColor: "#0e1422"
+  var viewer = $3Dmol.createViewer("slab-viewer", {
+    backgroundColor: 0x0e1422
   });
 
-  stage.loadFile("{{ base_path }}/files/co2_slab_last25.xyz", {
-    asTrajectory: true,
-    defaultRepresentation: false
-  }).then(function (comp) {
-    var loading = document.getElementById("ngl-slab-loading");
-    if (loading) loading.style.display = "none";
+  fetch("{{ base_path }}/files/co2_slab_last25.xyz")
+    .then(function (r) {
+      if (!r.ok) throw new Error("HTTP " + r.status);
+      return r.text();
+    })
+    .then(function (data) {
+      var loading = document.getElementById("slab-loading");
+      if (loading) loading.style.display = "none";
 
-    console.log("[NGL] loaded", comp.structure.atomCount, "atoms,",
-                "frames:", comp.trajList ? comp.trajList.length : 0);
-
-    comp.addRepresentation("spacefill", {
-      radiusScale: 0.6
+      viewer.addModelsAsFrames(data, "xyz");
+      viewer.setStyle({}, { sphere: { scale: 0.35 } });
+      viewer.zoomTo();
+      viewer.render();
+      viewer.animate({ loop: "forward", reps: 0, interval: 220 });
+    })
+    .catch(function (err) {
+      console.error("[3Dmol] load error", err);
+      var loading = document.getElementById("slab-loading");
+      if (loading) loading.textContent = "Failed to load: " + (err.message || err);
     });
-
-    if (comp.trajList && comp.trajList.length > 0) {
-      var traj = comp.trajList[0];
-      var player = new NGL.TrajectoryPlayer(traj.trajectory, {
-        step: 1,
-        timeout: 220,
-        mode: "loop"
-      });
-      player.play();
-    }
-
-    stage.autoView();
-  }).catch(function (err) {
-    console.error("[NGL] load error", err);
-    var loading = document.getElementById("ngl-slab-loading");
-    if (loading) loading.textContent = "Failed to load trajectory: " + err.message;
-  });
-
-  window.addEventListener('resize', function () { stage.handleResize(); });
 });
 </script>
 
