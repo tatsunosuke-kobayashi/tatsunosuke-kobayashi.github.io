@@ -40,8 +40,6 @@ document.addEventListener('DOMContentLoaded', function () {
       viewer.addModelsAsFrames(data, "xyz", { noComputeSecondaryStructure: true });
       viewer.setStyle({}, { sphere: { scale: 0.55 } });
       viewer.zoomTo();
-      // Lay the slab on its side: long z-axis horizontal
-      viewer.rotate(90, "y");
       viewer.render();
       viewer.animate({ loop: "forward", reps: 0, interval: 300 });
     })
