@@ -242,25 +242,42 @@ body {
   }
 }
 
-/* Widen the gap between the sidebar (author profile) and main content
-   when the desktop two-column layout is active. The Susy grid sets
-   prefix(0.5 of 12) which is quite narrow; we push the page over with
-   both margin-left and padding-left to make the gap unambiguously wide. */
-@media (min-width: 925px) {
-  .page {
-    padding-left: 5em !important;
+/* Widen the gap between sidebar and main content on desktop layouts.
+   Achieved by:
+   (a) adding right padding to the sidebar
+   (b) adding left padding to .page AND .page__inner-wrap
+   The double padding ensures the gap is visible no matter which
+   element the Susy grid actually places content inside. */
+@media (min-width: 800px) {
+  .sidebar.sticky,
+  .sidebar {
+    padding-right: 2em !important;
+  }
+  .page,
+  .page__inner-wrap {
+    padding-left: 4em !important;
   }
 }
 
-@media (min-width: 1200px) {
-  .page {
-    padding-left: 7em !important;
+@media (min-width: 1100px) {
+  .sidebar.sticky,
+  .sidebar {
+    padding-right: 3em !important;
+  }
+  .page,
+  .page__inner-wrap {
+    padding-left: 6em !important;
   }
 }
 
-@media (min-width: 1600px) {
-  .page {
-    padding-left: 9em !important;
+@media (min-width: 1400px) {
+  .sidebar.sticky,
+  .sidebar {
+    padding-right: 4em !important;
+  }
+  .page,
+  .page__inner-wrap {
+    padding-left: 8em !important;
   }
 }
 
