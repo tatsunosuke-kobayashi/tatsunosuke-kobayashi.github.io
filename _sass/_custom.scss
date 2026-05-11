@@ -243,26 +243,27 @@ body {
 }
 
 /* Widen the gap between sidebar and main content on desktop layouts.
-   We only push the .page left edge over (via padding/margin) so the
-   sidebar keeps its full usable width. */
-@media (min-width: 800px) {
+   Apply padding only to the outer content container (.page for single
+   layout, .archive for archive/list layouts). We DO NOT touch the
+   sidebar or .page__inner-wrap, which would distort the layout. */
+@media (min-width: 925px) {
   .page,
-  .page__inner-wrap {
+  .archive {
+    padding-left: 3em !important;
+  }
+}
+
+@media (min-width: 1280px) {
+  .page,
+  .archive {
     padding-left: 5em !important;
   }
 }
 
-@media (min-width: 1100px) {
+@media (min-width: 1600px) {
   .page,
-  .page__inner-wrap {
+  .archive {
     padding-left: 7em !important;
-  }
-}
-
-@media (min-width: 1400px) {
-  .page,
-  .page__inner-wrap {
-    padding-left: 9em !important;
   }
 }
 
