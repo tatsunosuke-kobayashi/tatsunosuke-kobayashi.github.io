@@ -222,23 +222,23 @@ body,
   max-width: 760px;
 }
 
-/* Add comfortable side padding so content never hugs the viewport edges */
-#main {
-  padding-left: 1.6em !important;
-  padding-right: 1.6em !important;
+/* Add comfortable outer breathing room around the whole layout */
+body {
+  padding-left: 1em;
+  padding-right: 1em;
 }
 
-@media (min-width: 640px) {
-  #main {
-    padding-left: 2.4em !important;
-    padding-right: 2.4em !important;
+@media (min-width: 768px) {
+  body {
+    padding-left: 1.5em;
+    padding-right: 1.5em;
   }
 }
 
-@media (min-width: 1024px) {
-  #main {
-    padding-left: 3em !important;
-    padding-right: 3em !important;
+@media (min-width: 1200px) {
+  body {
+    padding-left: 2.5em;
+    padding-right: 2.5em;
   }
 }
 
