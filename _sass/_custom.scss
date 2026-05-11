@@ -243,41 +243,26 @@ body {
 }
 
 /* Widen the gap between sidebar and main content on desktop layouts.
-   Achieved by:
-   (a) adding right padding to the sidebar
-   (b) adding left padding to .page AND .page__inner-wrap
-   The double padding ensures the gap is visible no matter which
-   element the Susy grid actually places content inside. */
+   We only push the .page left edge over (via padding/margin) so the
+   sidebar keeps its full usable width. */
 @media (min-width: 800px) {
-  .sidebar.sticky,
-  .sidebar {
-    padding-right: 2em !important;
-  }
   .page,
   .page__inner-wrap {
-    padding-left: 4em !important;
+    padding-left: 5em !important;
   }
 }
 
 @media (min-width: 1100px) {
-  .sidebar.sticky,
-  .sidebar {
-    padding-right: 3em !important;
-  }
   .page,
   .page__inner-wrap {
-    padding-left: 6em !important;
+    padding-left: 7em !important;
   }
 }
 
 @media (min-width: 1400px) {
-  .sidebar.sticky,
-  .sidebar {
-    padding-right: 4em !important;
-  }
   .page,
   .page__inner-wrap {
-    padding-left: 8em !important;
+    padding-left: 9em !important;
   }
 }
 
