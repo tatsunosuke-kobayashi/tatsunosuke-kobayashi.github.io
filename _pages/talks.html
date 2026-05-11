@@ -11,6 +11,13 @@ author_profile: true
 
 {% endif %}
 
-{% for post in site.talks reversed %}
-  {% include archive-single-talk.html %}
-{% endfor %}
+{% assign has_talks = false %}
+{% for post in site.talks %}{% assign has_talks = true %}{% endfor %}
+
+{% if has_talks %}
+  {% for post in site.talks reversed %}
+    {% include archive-single-talk.html %}
+  {% endfor %}
+{% else %}
+  <p><em>Talks and conference presentations will be listed here as they occur.</em></p>
+{% endif %}

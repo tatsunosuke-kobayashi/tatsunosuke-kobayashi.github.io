@@ -11,54 +11,42 @@ redirect_from:
 
 Education
 ======
-* Ph.D in Version Control Theory, GitHub University, 2018 (expected)
-* M.S. in Jekyll, GitHub University, 2014
-* B.S. in GitHub, GitHub University, 2012
+* M.S., Mechanical Engineering, Keio University, 2027 (expected)
+* B.S., Mechanical Engineering, Keio University, 2025
+  * Cumulative GPA: 3.6 / 4.0
 
-Work experience
+Research interests
 ======
-* Spring 2024: Academic Pages Collaborator
-  * GitHub University
-  * Duties includes: Updates and improvements to template
-  * Supervisor: The Users
+* Molecular simulation of CO₂–water systems (classical MD/MC, free energy perturbation)
+* Machine learning interatomic potentials (MLIP) for fluid-phase systems
+* Fisher information geometry for force field parameter identification
+* Carbon capture and storage (CCS) — molecular foundations of solubility prediction
 
-* Fall 2015: Research Assistant
-  * GitHub University
-  * Duties included: Merging pull requests
-  * Supervisor: Professor Hub
-
-* Summer 2015: Research Assistant
-  * GitHub University
-  * Duties included: Tagging issues
-  * Supervisor: Professor Git
-  
-Skills
+Technical skills
 ======
-* Skill 1
-* Skill 2
-  * Sub-skill 2.1
-  * Sub-skill 2.2
-  * Sub-skill 2.3
-* Skill 3
+* **Simulation**: LAMMPS, MCCCS Towhee, ASE, Quantum ESPRESSO, DeePMD-kit
+* **Programming**: Python (NumPy, PyTorch, automatic differentiation), Bash, custom Monte Carlo / FEP codes
+* **HPC**: GPU-based MLIP training, SLURM job management, conda environments
+* **Theory**: Statistical mechanics, free energy perturbation, Fisher information geometry, neural network potentials
+
+Honors and fellowships
+======
+*To be updated as available.*
 
 Publications
 ======
   <ul>{% for post in site.publications reversed %}
     {% include archive-single-cv.html %}
   {% endfor %}</ul>
-  
+
 Talks
 ======
   <ul>{% for post in site.talks reversed %}
     {% include archive-single-talk-cv.html  %}
   {% endfor %}</ul>
-  
-Teaching
+
+Activities
 ======
-  <ul>{% for post in site.teaching reversed %}
-    {% include archive-single-cv.html %}
-  {% endfor %}</ul>
-  
-Service and leadership
-======
-* Currently signed in to 43 different slack teams
+* Co-founder and co-representative of a student club at Keio University (since 2025)
+
+*Last updated: May 2026. Site under construction.*
