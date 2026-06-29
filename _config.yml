@@ -9,9 +9,9 @@
 # Basic Site Settings
 locale                   : "en-US"
 site_theme               : "air" # The available themes options are "default", "air", "sunrise", "mint", "dirt" and "contrast"
-title                    : "Tatsunosuke Kobayashi"
+title                    : "Tatsunosuke Kobayashi 小林達之介"
 title_separator          : "-"
-name                     : &name "Tatsunosuke Kobayashi"
+name                     : &name "Tatsunosuke Kobayashi 小林達之介"
 description              : &description "Tatsunosuke Kobayashi (小林達之介) — Master's student at Keio University. Molecular simulation, machine learning interatomic potentials, and Fisher information geometry for CO₂ solubility prediction."
 url                      : https://tatsunosuke-kobayashi.github.io # The base hostname & protocol for your site
 baseurl                  : "" # the subpath of your site, e.g. "/blog"
