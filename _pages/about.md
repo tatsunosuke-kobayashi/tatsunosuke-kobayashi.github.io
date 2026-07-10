@@ -12,6 +12,17 @@ redirect_from:
 
 小林達之介（こばやし たつのすけ）— 慶應義塾大学大学院 理工学研究科 機械工学専攻 泰岡顕治研究室 修士課程。
 
+<div style="width: 100%; border-radius: 8px; overflow: hidden; box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12); margin: 1.4em 0 0.4em; background: #0e1422;">
+  <video autoplay loop muted playsinline preload="metadata" style="width: 100%; display: block;">
+    <source src="{{ base_path }}/files/gemc_2box.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+</div>
+
+<p style="text-align: right; font-size: 0.82em; color: #6b7383; margin-top: 0.6em; font-family: -apple-system, sans-serif;">
+  In-house Gibbs Ensemble Monte Carlo (GEMC) · CO₂–water · two-box particle exchange
+</p>
+
 I work on molecular simulation of CO₂–water systems, motivated by the reliability problem of CO₂ solubility predictions for carbon capture and storage (CCS).
 
 I have applied for the JSPS Research Fellowship for Young Scientists (DC1) for AY2027, and plan to start my Ph.D. at Keio in April 2027.
